@@ -5,10 +5,28 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="nav">
+        <div class="logo">
+          3 Days of Code
+        </div>
+    		<% flash.each do |message_type, message| %>
+    			<div class='alert alert-<%= message_type %>'><%= message %></div>
+    		<% end %>
+        <% if logged_in? %>
+          <%= link_to 'Logout', logout_path, method: 'delete', class: 'link nav-selection' %>
+          <% if admin_user? %>
+            <%= link_to 'Show All', projects_path, class: 'link nav-selection' %>
+            <%= link_to 'New', new_project_path, class: 'link nav-selection' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

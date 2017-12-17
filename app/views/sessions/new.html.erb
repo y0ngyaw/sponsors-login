@@ -1,0 +1,20 @@
+<div class='container'>
+	<div class="title center">
+		Login</div>
+
+	<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.label :email, class: 'label'%>
+		<%= f.email_field :email %>
+
+		<%= f.label :password, class: 'label' %>
+		<%= f.password_field :password %>
+
+		<%= f.label :remember_me do %>
+			<%= f.check_box :remember_me, class: 'checkbox' %>
+			<span class="checkbox checkbox-label">Remember me</span>
+		<% end %>
+
+		<%= f.submit 'Login', class: 'btn btn-submit' %>
+	<% end %>
+
+</div>
