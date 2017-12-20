@@ -1,19 +1,22 @@
 <div class='sidebar'>
 	<% @projects.each do |project| %>
-		<div class='row-box'>
+		<%= button_to project_path(selected_project(project)), method: :get, remote: true, class: 'row-box' do %>
 			<div class='project project-title'>
 				<%= project.title %>
 				<% if admin_user? %>
 					<%= link_to '(edit)', edit_project_path(selected_project(project)), class: 'edit' %>
 				<% end %>
+				<div class='project project-description'>
+					<%= project.description %>
+				</div>
 			</div>
-			<div class='project project-description'>
-				<%= project.description %>
-			</div>
-		</div>
+		<% end %>
 	<% end %>
 </div>
 
-<div class="display">
+<div class="display" id="display">
+	<div class="show-text">
+		We are going to show you some awesome projects...
+	</div>
 </div>
 

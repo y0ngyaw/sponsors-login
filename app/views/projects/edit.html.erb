@@ -8,7 +8,14 @@
 
 		<%= f.label :description, class: 'label' %>
 		<%= f.text_area :description %>
-
+		
+		<% if documentation_exist?(@project) %>
+			<span class="label">Previous Documentation - <%= @project.documentation_file_name %> </span>
+		<% end %>
+		
+		<%= f.label :documentation, class: 'label' %>
+		<%= f.file_field :documentation %>
+		
 		<%= f.submit 'Save Changes', class: 'btn btn-submit' %>
 	
 		<%= link_to 'Delete Project', project_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-delete' %>

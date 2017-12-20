@@ -9,6 +9,9 @@
 		<%= f.label :description, class: 'label' %>
 		<%= f.text_area :description %>
 
+		<%= f.label :documentation, class: 'label' %>
+		<%= f.file_field :documentation %>
+
 		<%= f.submit 'Submit Project', class: 'btn btn-submit' %>
 	<% end %>
 </div>

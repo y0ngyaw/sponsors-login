@@ -3,4 +3,8 @@ module ProjectsHelper
 		@project = Project.find_by(id: project.id)
 	end 
 
+	def documentation_exist? project
+		project.documentation?
+	end 
+
 end

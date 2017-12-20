@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217073037) do
+ActiveRecord::Schema.define(version: 20171218020102) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "documentation_file_name"
+    t.string "documentation_content_type"
+    t.integer "documentation_file_size"
+    t.datetime "documentation_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

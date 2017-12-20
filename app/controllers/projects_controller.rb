@@ -18,6 +18,10 @@ class ProjectsController < ApplicationController
 	end 
 
 	def show
+		@project = Project.find(params[:id])
+		respond_to do |format|
+			format.js
+		end 
 	end 
 
 	def index
@@ -49,6 +53,6 @@ class ProjectsController < ApplicationController
 
 	private
 	def project_params
-		params.require(:project).permit(:title, :description)
+		params.require(:project).permit(:title, :description, :documentation)
 	end 
 end
