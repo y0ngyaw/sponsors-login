@@ -1,6 +1,6 @@
-<div class='sidebar'>
+<div class='sidebar' id='sidebar'>
 	<% @projects.each do |project| %>
-		<%= button_to project_path(selected_project(project)), method: :get, remote: true, class: 'row-box' do %>
+		<%= button_to project_path(selected_project(project)), method: :get, remote: true, class: 'row-box', id: 'row-box' do %>
 			<div class='project project-title'>
 				<%= project.title %>
 				<% if admin_user? %>

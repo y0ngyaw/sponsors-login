@@ -94,6 +94,7 @@ title {
 	border-right: 1px solid #000;
 	overflow: scroll;
 	padding-bottom: 2vh;
+	border: none;	
 }
 
 .row-box {
@@ -102,15 +103,23 @@ title {
 	height: 12vh;
 	background-color: #fff;
 	border: none;
+	opacity: 0;
+	margin-left: -5vw;
+	/*margin-bottom: 2vh;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+	transition: background-color 0.5s ease;
+	-webkit-transition: background-color 0.5s ease;
+	-moz-transition: background-color 0.5s ease;
+	-o-transition: background-color 0.5s ease;
 }
 
 .row-box:hover {
-	background-color: #D6EAF8;
+	background-color: #D7DBDD;
 }
 
 .display {
 	height: 94vh;
-	width: 77.9vw;
+	width: 78vw;
 	float: right;
 	font-size: 20vh;
 	display: inline;
@@ -124,7 +133,7 @@ title {
 
 embed {
 	height: 94vh;
-	width: 77.9vw;
+	width: 78vw;
 }
 
 .project {
@@ -193,4 +202,35 @@ embed {
 
 p {
 	font-size: 10vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 0.3vw;
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+	border: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #AED6F1;  
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #3498DB;
+}
+
+/* Animation */
+.slide-in {
+	animation: none;
+}
+
+@keyframes come-in {
+  from { margin-left: -5vw;
+  		 opacity: 0; }
+  to { margin-left: 0vw; 
+         opacity: 1.0;}
 }
