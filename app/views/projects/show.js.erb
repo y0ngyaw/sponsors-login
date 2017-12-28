@@ -1,3 +1,4 @@
 $('.show-text').remove();
+$('.center-logo').remove();
 $('embed').remove();
 $('<embed src="<%= @project.documentation.url %>" type="application/pdf" zoom="125%"></embed>').appendTo('#display');

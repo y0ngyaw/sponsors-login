@@ -13,7 +13,7 @@
     <div class="navbar">
       <div class="nav">
         <div class="logo">
-          3 Days of Code
+          <%= image_tag "logo.png", alt: "3 Days of Code", class: "logo-img" %>
         </div>
     		<% flash.each do |message_type, message| %>
     			<div class='alert alert-<%= message_type %>'><%= message %></div>
