@@ -80,6 +80,25 @@ title {
 }
 /* Login New Edit Page */
 
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 0.3vw;
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+	border: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #AED6F1;  
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #3498DB;
+}
+/* Scrollbar */
 
 // --------------------------------------Screen > 1200px ------------------------------------
 @media only screen and (min-width: 1200px) {
@@ -474,14 +493,15 @@ title {
 
 // ---------------------------Universal Small Screen --------------------------------------------
 @media only screen and (max-width: 1199px) {
+	* {
+		overflow-y: auto;
+	}
+
 	.sidebar,
 	.display {
 		display: none;
 	}
 
-	* {
-		overflow: scroll;
-	}
 	/* Navber */
 	.navbar {
 		width: 100%;
@@ -529,9 +549,8 @@ title {
 
 	/* Display */
 	.small-screen {
-		display: block;
-		overflow: scroll;
-		height: 100%;
+		overflow: none;
+		height: auto;
 	}
 
 	.project{
@@ -544,6 +563,7 @@ title {
 		padding: 0 auto;
 		color: #000;
 	}
+
 	/* Display */
 }
 
@@ -603,7 +623,7 @@ title {
 	.display-only-small-screen {
 		width: 85%;
 		height: 100%;
-		overflow: scroll;
+		overflow: hidden;
 		margin: 9vh auto 6vh auto;
 		padding: 1vh 1vw;
 		display: grid;
