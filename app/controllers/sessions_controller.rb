@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:session][:password])
 			log_in user 
 			params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-			flash[:success] = "Welcome!"
+			# flash[:success] = "Welcome!"
 			redirect_to projects_path
 		else 
-			flash[:error] = "Invalid email and/or password"
+			flash.now[:error] = "Invalid email and/or password"
 			render 'new'
 		end 
 	end 

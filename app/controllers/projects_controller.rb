@@ -9,10 +9,10 @@ class ProjectsController < ApplicationController
 	def create
 		@project = Project.new(project_params)
 		if @project.save
-			flash[:success] = "New project created!"
+			# flash.now[:success] = "New project created!"
 			redirect_to projects_path
 		else 
-			flash[:error] = "Errors!"
+			flash.now[:error] = "Errors!"
 			render 'new'
 		end 
 	end 
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 	end 
 
 	def index
-		@projects = Project.all
+		@projects = Project.all;
 	end 
 
 	def edit
@@ -36,10 +36,10 @@ class ProjectsController < ApplicationController
 	def update
 		@project = Project.find(params[:id])
 		if @project.update_attributes(project_params)
-			flash[:success] = "Project \"" + @project.title + "\" updated!"
+			# flash.now[:success] = "Project \"" + @project.title + "\" updated!"
 			redirect_to projects_path
 		else 
-			flash[:error] = "Errors!"
+			# flash.now[:error] = "Errors!"
 			render 'edit'
 		end 
 	end 
@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
 	def destroy
 		@project = Project.find(params[:id])
 		@project.destroy
-		flash[:success] = "Project \"" + @project.title + "\" deleted!"
+		# flash.now[:success] = "Project \"" + @project.title + "\" deleted!"
 		redirect_to projects_path
 	end 
 

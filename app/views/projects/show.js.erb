@@ -1,4 +1,4 @@
 $('.show-text').remove();
 $('.center-logo').remove();
-$('embed').remove();
-$('<embed src="<%= @project.documentation.url %>" type="application/pdf" zoom="125%"></embed>').appendTo('#display');
+$('object').remove();
+$('<object><embed src="<%= @project.documentation.url %>" type="application/pdf" zoom="125%"></embed></object>').appendTo('#display');
